@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>AI Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              // Swiss Pop Palette
+              violet: {
+                600: '#6D28D9', // Electric Violet
+                700: '#5B21B6',
+              },
+              surface: {
+                light: '#FFFFFF',
+                dark: '#000000',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              serif: ['Playfair Display', 'Georgia', 'serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            animation: {
+              'marquee': 'marquee 60s linear infinite',
+              'fade-in': 'fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+              'slide-up': 'slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+              'slide-in-right': 'slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+              'pop': 'pop 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+            },
+            keyframes: {
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              slideInRight: {
+                '0%': { transform: 'translateX(100%)' },
+                '100%': { transform: 'translateX(0)' },
+              },
+              pop: {
+                '0%': { transform: 'scale(0.95)' },
+                '100%': { transform: 'scale(1)' },
+              }
+            },
+            boxShadow: {
+              'swiss': '0 4px 0 0 rgba(0,0,0,0.1)', // Hard shadow
+            }
+          },
+        },
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+      html, body, #root {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow: hidden; 
+        background-color: #FFFFFF;
+      }
+
+      .dark body {
+        background-color: #000000;
+      }
+
+      /* Markdown Styles - Swiss Style */
+      .markdown-content {
+        color: #000000;
+      }
+      .dark .markdown-content {
+        color: #FFFFFF;
+      }
+      
+      .markdown-content p { margin-bottom: 0.8rem; line-height: 1.5; }
+      .markdown-content strong { font-weight: 800; color: inherit; }
+      
+      .markdown-content code { 
+        background: #F3F4F6; 
+        padding: 0.2rem 0.4rem; 
+        font-family: 'JetBrains Mono', monospace; 
+        font-size: 0.9em;
+        color: #6D28D9;
+        font-weight: 600;
+      }
+      .dark .markdown-content code { 
+        background: #1F2937;
+        color: #A78BFA;
+      }
+
+      /* Hide scrollbar but keep functionality */
+      .custom-scrollbar::-webkit-scrollbar { width: 0px; background: transparent; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
